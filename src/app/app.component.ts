@@ -3,6 +3,7 @@ import { Store, select } from "@ngrx/store";
 
 import { selectBookCollection, selectBooks } from "./state/books.selectors";
 import { retrievedBookList, addBook, removeBook } from "./state/books.actions";
+import { selectScore } from "./state/score.selectors";
 import { GoogleBooksService } from "./book-list/books.service";
 
 @Component({
@@ -15,6 +16,7 @@ export class AppComponent {
 
   books$ = this.store.pipe(select(selectBooks));
   bookCollection$ = this.store.pipe(select(selectBookCollection));
+  score$ = this.store.pipe(select(selectScore));
 
   onAdd(bookId) {
     this.store.dispatch(addBook({ bookId }));

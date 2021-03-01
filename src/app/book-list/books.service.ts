@@ -12,7 +12,7 @@ export class GoogleBooksService {
   getBooks(): Observable<Array<Book>> {
     return this.http
       .get<{ items: Book[] }>(
-        "https://www.googleapis.com/books/v1/volumes?maxResults=5&orderBy=relevance&q=neil%20gaiman"
+        "https://www.googleapis.com/books/v1/volumes?maxResults=20&orderBy=relevance&q=neil%20gaiman"
       )
       .pipe(map(books => books.items || []));
   }
