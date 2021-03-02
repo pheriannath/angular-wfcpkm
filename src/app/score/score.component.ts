@@ -7,7 +7,7 @@ import { Observable } from "rxjs";
   styleUrls: ["./score.component.css"]
 })
 export class ScoreComponent {
-  @Input() score: number;
+  @Input() score: Observable<number>;
   @Output() increment = new EventEmitter();
   @Output() decrement = new EventEmitter();
   @Output() reset = new EventEmitter();

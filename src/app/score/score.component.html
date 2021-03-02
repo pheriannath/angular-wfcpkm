@@ -1,4 +1,4 @@
-<span>{{score}}</span>
+<span>{{score | async}}</span>
 <button type="button" (click)="increment.emit()">Increment</button>
 <button type="button" (click)="decrement.emit()">Decrement</button>
 <button type="button" (click)="reset.emit()">Reset</button>
