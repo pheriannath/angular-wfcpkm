@@ -3,6 +3,7 @@ import { Store, select } from "@ngrx/store";
 
 import { selectBookCollection, selectBooks } from "./state/books.selectors";
 import { retrievedBookList, addBook, removeBook } from "./state/books.actions";
+import { increment, decrement, reset } from "./state/score.actions";
 import { selectScore } from "./state/score.selectors";
 import { GoogleBooksService } from "./book-list/books.service";
 
@@ -24,6 +25,18 @@ export class AppComponent {
 
   onRemove(bookId) {
     this.store.dispatch(removeBook({ bookId }));
+  }
+
+  onIncrement() {
+    this.store.dispatch(increment());
+  }
+
+  onDecrement() {
+    this.store.dispatch(decrement());
+  }
+
+  onReset() {
+    this.store.dispatch(reset());
   }
 
   ngOnInit() {

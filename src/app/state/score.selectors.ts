@@ -1,11 +1,9 @@
-import { createSelector, createFeatureSelector } from "@ngrx/store";
+import { createSelector } from "@ngrx/store";
 import { AppState } from "./app.state";
 
-export const selectScore = createSelector(
-  (state: AppState) => state.score,
-  (score: number) => score
-);
+export const selectScore = (state: AppState) => state.score;
 
-export const selectScoreState = createFeatureSelector<AppState, number>(
-  "score"
-);
+// export const selectScoreCount = createSelector(
+//   selectScore,
+//   (state: AppState) => state.score
+// );

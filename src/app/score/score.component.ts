@@ -1,11 +1,13 @@
-import { Component, Output, EventEmitter } from "@angular/core";
+import { Component, Input, Output, EventEmitter } from "@angular/core";
+import { Observable } from "rxjs";
 
 @Component({
-  selector: "score",
+  selector: "score-component",
   templateUrl: "./score.component.html",
   styleUrls: ["./score.component.css"]
 })
-export class Score {
+export class ScoreComponent {
+  @Input() score: number;
   @Output() increment = new EventEmitter();
   @Output() decrement = new EventEmitter();
   @Output() reset = new EventEmitter();

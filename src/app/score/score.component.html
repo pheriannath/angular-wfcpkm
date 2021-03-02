@@ -1,3 +1,4 @@
-<button type="button">Increment</button>
-<button type="button">Decrement</button>
-<button type="button">Reset</button>
+<span>{{score}}</span>
+<button type="button" (click)="increment.emit()">Increment</button>
+<button type="button" (click)="decrement.emit()">Decrement</button>
+<button type="button" (click)="reset.emit()">Reset</button>

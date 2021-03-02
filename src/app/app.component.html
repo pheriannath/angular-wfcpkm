@@ -1,5 +1,9 @@
 <h1>NgRx Tutorial</h1>
 
+<h2>Score</h2>
+<score-component [score]="score$" (increment)="onIncrement()" (decrement)="onDecrement()" (reset)="onReset()">
+</score-component>
+
 <h2>Books</h2>
 <app-book-list class="book-list" [books]="books$ | async" (add)="onAdd($event)"></app-book-list>
 
